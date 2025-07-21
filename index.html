@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BucaraEmprende - Registro de Ferias</title>
+    <link rel="stylesheet" href="estilos.css">
+    
+</head>
+<body>
+    <header>
+        <h1>BucaraEmprende :D</h1>
+        <p>Registro y visualización de eventos de emprendimiento</p>
+    </header>
+    <main>
+        <section id="registro-feria">
+            <h2>Registrar Nueva Feria</h2>
+            <form id="form-feria">
+                <label>Nombre del lugar:
+                    <input type="text" id="lugar-feria" required>
+                </label>
+                <label>Fecha de inicio:
+                    <input type="date" id="fecha-inicio-feria" required>
+                </label>
+                <label>Fecha de finalización:
+                    <input type="date" id="fecha-fin-feria" required>
+                </label>
+                <label>Horarios:
+                    <input type="text" id="horarios-feria" required placeholder="Ej: 8:00am - 5:00pm">
+                </label>
+                <button type="submit">Registrar Feria</button>
+            </form>
+        </section>
+        <section id="registro-emprendimiento">
+            <h2>Registrar Emprendimiento</h2>
+            <form id="form-emprendimiento">
+                <label>Feria asociada:
+                    <select id="feria-asociada" required></select>
+                </label>
+                <label>Nombre del emprendimiento:
+                    <input type="text" id="nombre-emprendimiento" required>
+                </label>
+                <label>Categoría:
+                    <input type="text" id="categoria-emprendimiento" required>
+                </label>
+                <label>Descripción:
+                    <textarea id="descripcion-emprendimiento" required></textarea>
+                </label>
+                <label>Enlace a red social:
+                    <input type="url" id="red-social-emprendimiento" placeholder="https://">
+                </label>
+                <fieldset>
+                    <legend>Producto o Servicio</legend>
+                    <label>Nombre:
+                        <input type="text" id="nombre-producto" required>
+                    </label>
+                    <label>Precio:
+                        <input type="number" id="precio-producto" min="0" step="0.01" required>
+                    </label>
+                    <label>Descripción:
+                        <textarea id="descripcion-producto" required></textarea>
+                    </label>
+                    <label>Foto:
+                        <input type="file" id="foto-producto" accept="image/*" required>
+                    </label>
+                </fieldset>
+                <button type="submit">Registrar Emprendimiento</button>
+            </form>
+        </section>
+        <section id="lista-ferias">
+            <h2>Ferias Registradas</h2>
+            <div id="contenedor-ferias"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 BucaraEmprende</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
