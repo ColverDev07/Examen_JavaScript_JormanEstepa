@@ -1,4 +1,4 @@
-// --- Utilidades ---
+
 function generarId() {
     return '_' + Math.random().toString(36).substr(2, 9);
 }
@@ -15,7 +15,7 @@ function ordenarFeriasPorFecha(ferias) {
     return ferias.sort((a, b) => new Date(a.fechaInicio) - new Date(b.fechaInicio));
 }
 
-// --- Validaciones auxiliares ---
+
 function esHorarioValido(horario) {
     // Ejemplo simple: 8:00am - 5:00pm
     return /^\d{1,2}:\d{2}(am|pm)\s*-\s*\d{1,2}:\d{2}(am|pm)$/i.test(horario.trim());
@@ -293,7 +293,7 @@ document.getElementById('form-emprendimiento').addEventListener('submit', functi
     reader.readAsDataURL(fotoInput.files[0]);
 });
 
-// Validaciones en tiempo real para feedback inmediato
+// Validaciones en tiempo real 
 ['lugar-feria','fecha-inicio-feria','fecha-fin-feria','horarios-feria'].forEach(id => {
     document.getElementById(id).addEventListener('input', validarFeria);
 });
@@ -305,7 +305,6 @@ document.getElementById('form-emprendimiento').addEventListener('submit', functi
 });
 
 //validacion para el formulario de registro de feria no permitir fechas pasadas y que la fecha de inicio sea posterior a la fecha actual
-// (ya está cubierta en validarFeria, pero se mantiene para feedback inmediato)
 document.getElementById('fecha-inicio-feria').addEventListener('change', function() {
     const fechaInicio = new Date(this.value);
     const fechaActual = new Date();
